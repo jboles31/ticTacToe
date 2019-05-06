@@ -13,9 +13,16 @@ let c1 = document.getElementById('C1')
 let c2 = document.getElementById('C2')
 let c3 = document.getElementById('C3')
 
+let ids = [a1, a2, a3, b1, b2, b3, c1, c2, c3];
+
 
 ///////PLAY COUNTER///////
 let count = 0;
+
+//////WIN COUNT//////
+let winCount = {};
+winCount.playerX = 0;
+winCount.playerO = 0; 
 
 ////////*******TURN SWITCHER*****/////
 ///////TURN OBJECT////////
@@ -71,10 +78,10 @@ a1.addEventListener('click', () => {
     write(a1);//// replace with a function that places the x or o
     if (count > 4) {
         if(check()){
-            window.setTimeout( function() {
-                alert('Player ' + turn.player + ' is the winner!')
-                window.location.reload(true);
-            },200) 
+            // window.setTimeout( function() {
+            //     alert('Player ' + turn.player + ' is the winner!')
+            //     window.location.reload(true);
+            // },200) 
         }
     }         
 });
@@ -86,10 +93,10 @@ a2.addEventListener('click', () => {
     write(a2);
     if (count > 4) {
         if(check()){
-            window.setTimeout( function() {
-                alert('Player ' + turn.player + ' is the winner!')
-                window.location.reload(true);
-            },200) 
+            // window.setTimeout( function() {
+            //     alert('Player ' + turn.player + ' is the winner!')
+            //     window.location.reload(true);
+            // },200) 
         }
     }  
 });
@@ -100,10 +107,10 @@ a3.addEventListener('click', () => {
     write(a3);
     if (count > 4) {
         if(check()){
-            window.setTimeout( function() {
-                alert('Player ' + turn.player + ' is the winner!')
-                window.location.reload(true);
-            },200) 
+            // window.setTimeout( function() {
+            //     alert('Player ' + turn.player + ' is the winner!')
+            //     window.location.reload(true);
+            // },200) 
         }
     }
 });
@@ -115,10 +122,10 @@ b1.addEventListener('click', () => {
     write(b1);
     if (count > 4) {
         if(check()){
-            window.setTimeout( function() {
-                alert('Player ' + turn.player + ' is the winner!')
-                window.location.reload(true);
-            },200) 
+            // window.setTimeout( function() {
+            //     alert('Player ' + turn.player + ' is the winner!')
+            //     window.location.reload(true);
+            // },200) 
         }
     }
 });
@@ -129,10 +136,10 @@ b2.addEventListener('click', () => {
     write(b2);
     if (count > 4) {
         if(check()){
-            window.setTimeout( function() {
-                alert('Player ' + turn.player + ' is the winner!')
-                window.location.reload(true);
-            },200) 
+            // window.setTimeout( function() {
+            //     alert('Player ' + turn.player + ' is the winner!')
+            //     window.location.reload(true);
+            // },200) 
         }
     }
 });
@@ -143,10 +150,10 @@ b3.addEventListener('click', () => {
     write(b3);
     if (count > 4) {
         if(check()){
-            window.setTimeout( function() {
-                alert('Player ' + turn.player + ' is the winner!')
-                window.location.reload(true);
-            },200) 
+            // window.setTimeout( function() {
+            //     alert('Player ' + turn.player + ' is the winner!')
+            //     window.location.reload(true);
+            // },200) 
         }
     }
 });
@@ -158,10 +165,10 @@ c1.addEventListener('click', () => {
     write(c1);
     if (count > 4) {
         if(check()){
-            window.setTimeout( function() {
-                alert('Player ' + turn.player + ' is the winner!')
-                window.location.reload(true);
-            },200) 
+            // window.setTimeout( function() {
+            //     alert('Player ' + turn.player + ' is the winner!')
+            //     window.location.reload(true);
+            // },200) 
         }
     }
 });
@@ -172,10 +179,10 @@ c2.addEventListener('click', () => {
     write(c2);
     if (count > 4) {
         if(check()){
-            window.setTimeout( function() {
-                alert('Player ' + turn.player + ' is the winner!')
-                window.location.reload(true);
-            },200) 
+            // window.setTimeout( function() {
+            //     alert('Player ' + turn.player + ' is the winner!')
+            //     window.location.reload(true);
+            // },200) 
         }
     }
 });
@@ -186,9 +193,10 @@ c3.addEventListener('click', () => {
     write(c3);
     if (count > 4) {
         if(check()){
-            window.setTimeout( function() {
-                alert('Player ' + turn.player + ' is the winner!')
-            },200) 
+            // window.setTimeout( function() {
+            //     alert('Player ' + turn.player + ' is the winner!')
+            //     window.location.reload(true);
+            // },200) 
         }
     }
 });
@@ -200,28 +208,79 @@ c3.addEventListener('click', () => {
 let check = function() {
     if(a1.innerHTML !== "" && a1.innerHTML === b1.innerHTML && a1.innerHTML === c1.innerHTML){
         turn.mark();
+        let player = turn.player;
+        winCount.playerO = winCount.playerO + 1;
+        window.setTimeout( function() {
+            alert('Player ' + turn.player + ' is the winner!')
+            clearBoard();
+        },200) 
         return true;
     } else if(a2.innerHTML !== "" && a2.innerHTML === b2.innerHTML && a2.innerHTML === c2.innerHTML){
         turn.mark();
+        winCount[turn.player] = winCount[turn.player] + 1;
+        window.setTimeout( function() {
+            alert('Player ' + turn.player + ' is the winner!')
+            clearBoard();
+        },200) 
         return true;
     } else if(a3.innerHTML !== "" && a3.innerHTML === b3.innerHTML && a3.innerHTML === c3.innerHTML){
         turn.mark();
+        winCount[turn.player] = winCount[turn.player] + 1;
+        window.setTimeout( function() {
+            alert('Player ' + turn.player + ' is the winner!')
+            clearBoard();
+        },200) 
         return true;
     } else if(a1.innerHTML !== "" && a1.innerHTML === a2.innerHTML && a1.innerHTML === a3.innerHTML){
         turn.mark();
+        winCount[turn.player] = winCount[turn.player] + 1;
+        window.setTimeout( function() {
+            alert('Player ' + turn.player + ' is the winner!')
+            clearBoard();
+        },200) 
         return true;
     } else if(b1.innerHTML !== "" && b1.innerHTML === b2.innerHTML && b1.innerHTML === b3.innerHTML){
         turn.mark();
+        winCount[turn.player] = winCount[turn.player] + 1;
+        window.setTimeout( function() {
+            alert('Player ' + turn.player + ' is the winner!')
+            clearBoard();
+        },200) 
         return true;
     } else if(c1.innerHTML !== "" && c1.innerHTML === c2.innerHTML && c1.innerHTML === c3.innerHTML){
         turn.mark();
+        winCount[turn.player] = winCount[turn.player] + 1;
+        window.setTimeout( function() {
+            alert('Player ' + turn.player + ' is the winner!')
+            clearBoard();
+        },200) 
         return true;
     } else if(a1.innerHTML !== "" && a1.innerHTML === b2.innerHTML && a1.innerHTML === c3.innerHTML){
         turn.mark();
+        winCount[turn.player] = winCount[turn.player] + 1;
+        window.setTimeout( function() {
+            alert('Player ' + turn.player + ' is the winner!')
+            clearBoard();
+        },200) 
         return true;
     } else if(a3.innerHTML !== "" && a3.innerHTML === b2.innerHTML && a3.innerHTML === c1.innerHTML){
         turn.mark();
+        winCount[turn.player] = winCount[turn.player] + 1;
+        window.setTimeout( function() {
+            alert('Player ' + turn.player + ' is the winner!')
+            clearBoard();
+        },200) 
         return true;
     } 
     return null;
+}
+
+let clearBoard = () => {
+    for (let keys in placeHolder) {
+        placeHolder[keys] = undefined;
+    }
+
+    ids.forEach(element => {
+        element.innerHTML = "";
+    })
 }

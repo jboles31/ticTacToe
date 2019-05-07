@@ -1,48 +1,52 @@
 <!DOCTYPE HTML>
 <html lang = "en">
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Tic Tac Toe</title>
   <meta charset = "UTF-8" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Let's Play</h1>
-  <button class="reset" id="reset" type="button">Reset Game</button>
-  <table style="width:100%">
-    <tr>
+  <div id="playerX"></div>
+  <div id="playerO"></div><br>
+  <button class="reset" id="reset" type="button">Reset Game</button><br>
+  <div id="turn"></div>
+  <table class="table">
+    <tr class="row">
         <th>
-            <button class="button" id="A1" type="button"></button>
+            <div class="gameBoard" id="A1"></div>
         </th>
         <th>
-            <button class="button" id="B1" type="button"></button>
+            <div class="gameBoard" id="B1"></div>
         </th> 
         <th>
-            <button class="button" id="C1" type="button"></button>
+            <div class="gameBoard" id="C1"></div>
         </th>
     </tr>
-    <tr>
+    <tr class="row">
         <th>
-            <button class="button" id="A2" type="button"></button>
+            <div class="gameBoard" id="A2"></div>
         </th>
         <th>
-            <button class="button" id="B2" type="button"></button>
+            <div class="gameBoard" id="B2"></div>
         </th> 
         <th>
-            <button class="button" id="C2" type="button"></button>
+            <div class="gameBoard" id="C2"></div>
         </th>
     </tr>
-    <tr>
+    <tr class="row">
         <th>
-            <button class="button" id="A3" type="button"></button>
+            <div class="gameBoard" id="A3"></div>
         </th>
         <th>
-            <button class="button" id="B3" type="button"></button>
+            <div class="gameBoard" id="B3"></div>
         </th> 
         <th>
-            <button class="button" id="C3" type="button"></button>
+            <div class="gameBoard" id="C3"></div>
         </th>
     </tr>
-  </table>
+</table>
 
  
 </body>
